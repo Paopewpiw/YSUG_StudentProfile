@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<img class="profile-pic" src="hagok.jpg" alt="Profile picture">
+<h1>Your Full Name</h1>
+<p>About Myself</p>
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section id="about">
+<h2>About Section</h2>
+<p>
+Hi, I'm Paul Rey A. Ysug, a student currently taking up Information Technology at XU.
+App development isn't really my thing but I'm willing to learn the fundamentals and to be honest, I prefer networking because
+it sounds "fun", I don't really know whats truly in it but we'll see. 
+</p>
+<p>
+Outside of school, I like gaming, sleeping, and badminton. I'm always looking for new things to learn and try.
+</p>
+<p><strong>Interests:</strong> Studying, gaming, sports</p>
+<p><strong>Educational Background:</strong> Xavier Ateneo de Cagayan University, BSIT-3</p>
+<p><strong>Goals:</strong> To become a skilled mobile app developer and build apps that help people in their daily lives.</p>
+</section>
+
+<section id="skills">
+<h2>Skills Section</h2>
+<p>Here are some of the skills I've developed so far:</p>
+<ul class="skills-list">
+<li>HTML &amp; CSS</li>
+<li>JavaScript</li>
+<li>Java</li>
+<li>Problem Solving</li>
+
+</ul>
+</section>
+</main>
+
+<footer>
+<p>&copy; <span id="year"></span> Paul Rey A. Ysug. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
