@@ -1,111 +1,110 @@
-# Student Profile Application
+# Student Profile
 
 ## 1. Project Description
 
-This is a student profile application created using HTML, CSS, JavaScript, and Apache Cordova. It contains information about me, my skills, projects, and contact details. The application is designed to work on mobile, tablet, and desktop screens.
+This project is a responsive Student Profile application developed using HTML, CSS, JavaScript, and Apache Cordova. It displays information about a student, including their background, skills, projects, and contact information.
+
+The application was developed as part of the student's activities in learning web development and Cordova application development.
 
 ## 2. Application Pages
 
-* **Profile** – The main page that introduces me and provides an overview of my profile.
-* **About** – Contains information about my background, interests, education, and goals.
-* **Skills** – Shows the technical and personal skills I am developing.
-* **Projects** – Shows some of the projects I have worked on.
-* **Contact** – Contains my contact information and a message form.
-
-## 3. Navigation
-
-The application uses HTML links to navigate between the different pages.
-
-The navigation bar is available on each page and contains links to:
-
-* Profile
-* About
-* Skills
-* Projects
-* Contact
-
-## 4. Responsive Design
-
-The application uses CSS media queries to adjust the layout based on the screen size.
-
-* **Desktop** – Uses a wider layout with multiple columns.
-* **Tablet** – Adjusts the content and grid layout to fit the tablet screen.
-* **Mobile** – Uses a single-column layout, vertical navigation, and full-width buttons.
-
-This allows the application to remain usable on different devices and screen sizes.
-
-## 5. UI/UX Principles Applied
-
-The application follows basic UI/UX principles by using:
-
-* **Consistency** – The same colors, fonts, navigation, and layout style are used across the pages.
-* **Simplicity** – The pages have simple layouts and only necessary information.
-* **Readability** – Clear fonts, spacing, and text colors are used.
-* **Visual Hierarchy** – Headings and sections are used to organize information.
-* **Usability** – Buttons and navigation links are easy to find and use.
-
-## 6. How to Run
-
-### Requirements
-
-* Node.js
-* Apache Cordova
-* Android Studio
-* Android SDK
-* JDK
-
-### Steps
-
-1. Open Command Prompt in the project folder.
-2. Run:
-
-```bash
-cordova prepare android
-```
-
-3. Build the application:
-
-```bash
-cordova build android
-```
-
-4. Start an Android emulator or connect an Android device.
-5. Run the application:
-
-```bash
-cordova run android
-```
-
-## 7. Application Screenshots
-
 ### Profile
-<img width="743" height="651" alt="phone" src="https://github.com/user-attachments/assets/bddc04da-c28b-4f4b-ae20-0a83ac29ee67" />
-<img width="862" height="754" alt="tab" src="https://github.com/user-attachments/assets/67d0513f-9237-4ba0-9ed2-dfffb97b7fbd" />
-<img width="880" height="616" alt="desk" src="https://github.com/user-attachments/assets/dc4082c7-cdcb-4f83-afe2-1f51214eec4d" />
+
+The Profile page serves as the homepage of the application. It displays the student's name, course, year level, About Me information, and skills.
 
 ### About
-<img width="793" height="697" alt="phone2" src="https://github.com/user-attachments/assets/432359cd-fb2d-44ff-86a0-f9162d360d9b" />
-<img width="872" height="684" alt="tab2" src="https://github.com/user-attachments/assets/0d9408c3-2d84-4e6d-9efb-ef63454e21f8" />
-<img width="880" height="673" alt="desk2" src="https://github.com/user-attachments/assets/6aa40909-a706-42fb-b61a-b1841f451852" />
+
+The About page provides information about the student's background, interests, educational background, and goals.
 
 ### Skills
-<img width="781" height="681" alt="phone3" src="https://github.com/user-attachments/assets/6b6912d0-435a-4c7c-b669-312166f40a1d" />
-<img width="863" height="714" alt="tab3" src="https://github.com/user-attachments/assets/4b6bfe06-d613-4ee9-ae78-a9f45403b632" />
-<img width="858" height="645" alt="desk3" src="https://github.com/user-attachments/assets/d98b05a5-7101-44b3-b018-fa3dcf557d0f" />
+
+The Skills page displays the technical and personal skills that the student is developing.
+
+### Projects
+
+The Projects page presents projects created by the student and the technologies used in each project.
+
+### Contact
+
+The Contact page provides the student's contact information and contains a contact form layout.
+
+## 3. Profile Editing
+
+The Profile page includes an Edit Profile function.
+
+The user can modify:
+
+- Full Name
+- Course
+- Year Level
+- About Me
+- Skills
+
+After selecting Edit Profile, an editing form is displayed. The user can select Save to apply the changes or Cancel to discard them.
+
+## 4. JavaScript Functionality
+
+JavaScript is used to make the Student Profile interactive.
+
+It handles:
+
+- Edit Profile form handling
+- User input validation
+- Dynamic profile updates
+- Saving profile information
+- Canceling profile edits
+
+The JavaScript updates the displayed profile without requiring changes to the HTML source code.
+
+## 5. Local Data Storage
+
+The application uses `localStorage` to store the student's profile information.
+
+The saved information includes:
+
+- Full Name
+- Course
+- Year Level
+- About Me
+- Skills
+
+When the application starts, JavaScript retrieves the saved information from `localStorage`. If no saved information exists, the application displays the default profile information.
+
+This allows the updated profile to remain available after closing and reopening the application.
+
+## 6. Responsive Design
+
+The application uses responsive HTML and CSS to support different screen sizes.
+
+The layout adapts to:
+
+- Desktop
+- Tablet
+- Mobile
+
+CSS media queries are used to adjust the layout, navigation, cards, buttons, and form elements for smaller screens.
+
+## 7. How to Run
+
+1. Clone or download the repository.
+2. Open the project folder.
+3. Make sure Apache Cordova and the required Android development tools are installed.
+4. Open the project using Android Studio or a terminal.
+5. Build the Cordova application.
+6. Run the application on an Android emulator or connected Android device.
+
+## 8. Screenshots
+<img width="677" height="674" alt="Screenshot 2026-09-19 183823" src="https://github.com/user-attachments/assets/3509e5b7-cecd-4304-9e51-b80b814660ea" />
+<img width="603" height="642" alt="Screenshot 2026-09-19 184058" src="https://github.com/user-attachments/assets/bc5732f6-923c-4536-b296-252dc24c2265" />
+<img width="649" height="689" alt="Screenshot 2026-09-19 184115" src="https://github.com/user-attachments/assets/02246145-c760-43f0-9d6e-9d81759ba3e3" />
+<img width="592" height="674" alt="Screenshot 2026-09-19 184125" src="https://github.com/user-attachments/assets/7ab701bb-e21d-4936-84a4-f5decfead82d" />
+<img width="605" height="665" alt="Screenshot 2026-09-19 184135" src="https://github.com/user-attachments/assets/2aed2bc0-edb8-4c45-ac65-8b897ee9ac39" />
 
 
+Example Cordova commands:
 
+```bash
+cordova platform add android
+cordova build android
+cordova run android
 
-## Technologies Used
-
-* HTML
-* CSS
-* JavaScript
-* Apache Cordova
-* Android Studio
-
-## Author
-
-**Paul Rey A. Ysug**
-Information Technology Student
-Xavier Ateneo de Cagayan University
