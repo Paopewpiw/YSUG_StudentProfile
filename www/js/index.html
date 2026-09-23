@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | Paul Rey A. Ysug</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+     <img id="profilePicture"
+         class="profile-pic"
+         src="hagok.jpg"
+         alt="Profile picture of Paul Rey A. Ysug">
+
+    <button type="button"
+            class="button"
+            onclick="takeProfilePicture()">
+        Change Profile Picture
+    </button>
+
+    <h1 id="profileName">Paul Rey A. Ysug</h1>
+
+    <p id="profileCourse">
+        Bachelor of Science in Information Technology
+    </p>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html" class="active">
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="skills.html">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="projects.html">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- PROFILE VIEW -->
+    <div id="profileView">
+
+        <section class="hero">
+
+            <h2>Welcome to My Student Profile</h2>
+
+            <p>
+                <strong>Year Level:</strong>
+                <span id="profileYear"></span>
+            </p>
+
+            <p id="profileAbout">
+                I am an Information Technology student
+                interested in networking, technology,
+                gaming, and learning new computer-related skills.
+            </p>
+
+            <div class="button-container">
+
+                <button
+                    type="button"
+                    class="button"
+                    onclick="editProfile()">
+
+                    Edit Profile
+
+                </button>
+
+                <a href="about.html" class="button secondary">
+                    Learn More About Me
+                </a>
+
+                <a href="projects.html" class="button secondary">
+                    View My Projects
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>My Skills</h2>
+
+            <ul
+                id="profileSkills"
+                class="content-list">
+            </ul>
+
+        </section>
+
+
+        <section>
+
+            <h2>Explore My Profile</h2>
+
+            <div class="card-grid">
+
+                <a href="about.html" class="card">
+
+                    <h3>About Me</h3>
+
+                    <p>
+                        Learn more about my background,
+                        interests, education, and goals.
+                    </p>
+
+                </a>
+
+
+                <a href="skills.html" class="card">
+
+                    <h3>My Skills</h3>
+
+                    <p>
+                        See the programming, networking,
+                        database, and computer skills
+                        I am developing.
+                    </p>
+
+                </a>
+
+
+                <a href="projects.html" class="card">
+
+                    <h3>My Projects</h3>
+
+                    <p>
+                        View some of the projects I have
+                        worked on as an IT student.
+                    </p>
+
+                </a>
+
+
+                <a href="contact.html" class="card">
+
+                    <h3>Contact Me</h3>
+
+                    <p>
+                        Find my email, GitHub, and other
+                        contact information.
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- EDIT PROFILE -->
+    <section
+        id="editProfile"
+        class="edit-profile"
+        style="display: none;">
+
+        <h2>Edit Profile</h2>
+
+        <form id="profileForm">
+
+            <label for="fullName">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name">
+
+
+            <label for="course">
+                Course
+            </label>
+
+            <input
+                type="text"
+                id="course"
+                name="course"
+                placeholder="Enter your course">
+
+
+            <label for="yearLevel">
+                Year Level
+            </label>
+
+            <input
+                type="text"
+                id="yearLevel"
+                name="yearLevel"
+                placeholder="Enter your year level">
+
+
+            <label for="aboutMe">
+                About Me
+            </label>
+
+            <textarea
+                id="aboutMe"
+                name="aboutMe"
+                rows="5"
+                placeholder="Tell something about yourself">
+            </textarea>
+
+
+            <label for="skills">
+                Skills
+            </label>
+
+            <textarea
+                id="skills"
+                name="skills"
+                rows="4"
+                placeholder="Example: HTML & CSS, JavaScript, Java">
+            </textarea>
+
+
+            <div class="edit-buttons">
+
+                <button
+                    type="submit"
+                    class="button">
+
+                    Save
+
+                </button>
+
+                <button
+                    type="button"
+                    class="button cancel-button"
+                    onclick="cancelEdit()">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 Paul Rey A. Ysug.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/profile.js"></script>
+<script src="js/camera.js"></script>
+
+</body>
+</html>
