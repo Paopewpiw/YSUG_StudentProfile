@@ -16,9 +16,16 @@
 
 <header>
 
-    <img class="profile-pic"
+     <img id="profilePicture"
+         class="profile-pic"
          src="hagok.jpg"
          alt="Profile picture of Paul Rey A. Ysug">
+
+    <button type="button"
+            class="button"
+            onclick="takeProfilePicture()">
+        Change Profile Picture
+    </button>
 
     <h1 id="profileName">Paul Rey A. Ysug</h1>
 
@@ -285,8 +292,9 @@
 </footer>
 
 
+<script src="cordova.js"></script>
 <script src="js/profile.js"></script>
+<script src="js/camera.js"></script>
 
 </body>
 </html>
-

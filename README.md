@@ -1,110 +1,178 @@
-# Student Profile
+# Student Profile Application
 
 ## 1. Project Description
 
-This project is a responsive Student Profile application developed using HTML, CSS, JavaScript, and Apache Cordova. It displays information about a student, including their background, skills, projects, and contact information.
-
-The application was developed as part of the student's activities in learning web development and Cordova application development.
+The Student Profile application is a Cordova-based mobile application that displays a student's personal information, skills, projects, and contact details. It also includes an Edit Profile feature using localStorage and a camera feature for changing the profile picture.
 
 ## 2. Application Pages
 
 ### Profile
 
-The Profile page serves as the homepage of the application. It displays the student's name, course, year level, About Me information, and skills.
+The Profile page displays the student's profile picture, name, course, year level, introduction, and skills. It also provides access to the Edit Profile feature and navigation to the other pages.
 
 ### About
 
-The About page provides information about the student's background, interests, educational background, and goals.
+The About page provides additional information about the student, including background, interests, education, and goals.
 
 ### Skills
 
-The Skills page displays the technical and personal skills that the student is developing.
+The Skills page displays the technical and computer-related skills of the student.
 
 ### Projects
 
-The Projects page presents projects created by the student and the technologies used in each project.
+The Projects page displays projects created by the student and provides information about the technologies used.
 
 ### Contact
 
-The Contact page provides the student's contact information and contains a contact form layout.
+The Contact page provides the student's contact information and a contact form layout.
 
 ## 3. Profile Editing
 
-The Profile page includes an Edit Profile function.
+The application includes an Edit Profile feature that allows the user to update their:
 
-The user can modify:
+* Full Name
+* Course
+* Year Level
+* About Me
+* Skills
 
-- Full Name
-- Course
-- Year Level
-- About Me
-- Skills
+The updated profile information is stored using the browser's localStorage. This allows the information to remain available when the application is reopened.
 
-After selecting Edit Profile, an editing form is displayed. The user can select Save to apply the changes or Cancel to discard them.
+The Save button stores the updated information, while the Cancel button exits the editing mode without saving the changes.
 
-## 4. JavaScript Functionality
+## 4. Camera Integration
 
-JavaScript is used to make the Student Profile interactive.
+The application uses the Cordova Camera Plugin to access the device camera.
 
-It handles:
+The camera feature follows this process:
 
-- Edit Profile form handling
-- User input validation
-- Dynamic profile updates
-- Saving profile information
-- Canceling profile edits
+**Change Profile Picture → Open Camera → Capture Image → Update Profile Picture**
 
-The JavaScript updates the displayed profile without requiring changes to the HTML source code.
+When the user selects **Change Profile Picture**, the application calls the Cordova camera API. After a photo is captured, the image is converted into a format that can be displayed by the application and is set as the new profile picture.
 
-## 5. Local Data Storage
+The captured image is also stored in localStorage so that it can be loaded again when the application is reopened.
 
-The application uses `localStorage` to store the student's profile information.
+## 5. Device Feature Integration
 
-The saved information includes:
+Cordova is used because a normal web browser does not directly provide the same access to native Android device features.
 
-- Full Name
-- Course
-- Year Level
-- About Me
-- Skills
+The Cordova Camera Plugin allows the JavaScript code in the application to communicate with the Android camera.
 
-When the application starts, JavaScript retrieves the saved information from `localStorage`. If no saved information exists, the application displays the default profile information.
+The application waits for the `deviceready` event before loading the saved profile picture and using Cordova device features.
 
-This allows the updated profile to remain available after closing and reopening the application.
+## 6. Image Handling
 
-## 6. Responsive Design
+The camera returns the captured image as image data. The application adds the appropriate image format and displays the result using the profile picture element.
 
-The application uses responsive HTML and CSS to support different screen sizes.
+The captured image is also saved using localStorage under the key:
 
-The layout adapts to:
+`profilePicture`
 
-- Desktop
-- Tablet
-- Mobile
+When the application starts, it checks localStorage for a previously saved profile picture. If one is found, it is displayed. Otherwise, the default profile picture is used.
 
-CSS media queries are used to adjust the layout, navigation, cards, buttons, and form elements for smaller screens.
+## 7. Error Handling
 
-## 7. How to Run
+The camera functionality includes an error callback to handle situations where the camera operation is cancelled or fails.
 
-1. Clone or download the repository.
-2. Open the project folder.
-3. Make sure Apache Cordova and the required Android development tools are installed.
-4. Open the project using Android Studio or a terminal.
-5. Build the Cordova application.
-6. Run the application on an Android emulator or connected Android device.
+If the user cancels the camera, the existing profile picture remains unchanged.
 
-## 8. Screenshots
-<img width="677" height="674" alt="Screenshot 2026-09-19 183823" src="https://github.com/user-attachments/assets/3509e5b7-cecd-4304-9e51-b80b814660ea" />
-<img width="603" height="642" alt="Screenshot 2026-09-19 184058" src="https://github.com/user-attachments/assets/bc5732f6-923c-4536-b296-252dc24c2265" />
-<img width="649" height="689" alt="Screenshot 2026-09-19 184115" src="https://github.com/user-attachments/assets/02246145-c760-43f0-9d6e-9d81759ba3e3" />
-<img width="592" height="674" alt="Screenshot 2026-09-19 184125" src="https://github.com/user-attachments/assets/7ab701bb-e21d-4936-84a4-f5decfead82d" />
-<img width="605" height="665" alt="Screenshot 2026-09-19 184135" src="https://github.com/user-attachments/assets/2aed2bc0-edb8-4c45-ac65-8b897ee9ac39" />
+If the camera cannot be accessed, the application displays a message asking the user to check the device permissions.
 
+This prevents the application from crashing when the camera operation fails.
 
-Example Cordova commands:
+## 8. Responsive Design
+
+The application uses responsive HTML and CSS so that the interface can adjust to different screen sizes.
+
+The application is designed to remain usable across:
+
+* Desktop
+* Tablet
+* Mobile
+
+The layout, navigation, buttons, cards, and profile sections adjust based on the available screen size.
+
+## 9. How to Run
+
+### Requirements
+
+* Node.js
+* Apache Cordova
+* Android Studio
+* Android SDK
+* Android device or emulator
+
+### Install Dependencies
+
+Clone or download the repository and open a command prompt in the project folder.
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+Install the Android platform if needed:
 
 ```bash
 cordova platform add android
+```
+
+Install the Camera Plugin:
+
+```bash
+cordova plugin add cordova-plugin-camera
+```
+
+Verify the installed plugin:
+
+```bash
+cordova plugin list
+```
+
+The Camera Plugin should appear in the list.
+
+### Build the Application
+
+Build the Android application using:
+
+```bash
 cordova build android
+```
+
+### Run the Application
+
+Connect an Android device or start an Android emulator, then run:
+
+```bash
 cordova run android
+```
+
+The application can also be opened through the Android project generated by Cordova in Android Studio.
+
+## 10. Application Screenshots
+<img width="1920" height="1080" alt="ambot unsa ni" src="https://github.com/user-attachments/assets/38b9e084-fc79-4892-8b31-34a84d7d29ff" />
+pc has no webcam so it shows this
+
+
+
+
+## Cordova Camera Plugin
+
+This project uses:
+
+`cordova-plugin-camera`
+
+The plugin is required to allow the application to access the device camera through Cordova.
+
+The JavaScript code calls:
+
+```javascript
+navigator.camera.getPicture()
+```
+
+to open the device camera and retrieve the captured image.
+
+The captured image is then displayed as the profile picture and saved in localStorage for persistence.
+
 
